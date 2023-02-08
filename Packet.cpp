@@ -52,17 +52,11 @@ string Packet::get_CRC_field()
 }
 
 string Packet::get_packet_data()
-{	
+{
 	return "Packet # " + get_packet_id() + ":\n" +
-		get_packet_content() + "\n" +
-		"CRC: " + get_CRC_field() + "\n" +
-		"Destination Address: " + get_destination_address_field() + "\n" +
-		"Source Address: " + get_source_address_field() + "\n" +
-		"Type: " + get_type_field() + "\n";
-
+		   get_packet_content() + "\n" +
+		   "CRC: " + get_CRC_field() + "\n" +
+		   "Destination Address: " + get_destination_address_field() + "\n" +
+		   "Source Address: " + get_source_address_field() + "\n" +
+		   "Type: " + get_type_field() + "\n";
 }
-
-
-
-
-

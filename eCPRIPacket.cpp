@@ -4,7 +4,7 @@ eCPRIPacket::eCPRIPacket()
 {
 }
 
-eCPRIPacket::eCPRIPacket(map<string, string> packet_info , map<string, string> eCPRI_packet_info) : Packet(packet_info)
+eCPRIPacket::eCPRIPacket(map<string, string> packet_info, map<string, string> eCPRI_packet_info) : Packet(packet_info)
 {
 	this->concatentaion_indicator_field = eCPRI_packet_info.find("concatentaion_indicator_field")->second;
 	this->message_type_field = eCPRI_packet_info.find("message_type_field")->second;
@@ -47,18 +47,15 @@ string eCPRIPacket::get_sequence_ID_field()
 string eCPRIPacket::get_packet_data()
 {
 	return "Packet # " + get_packet_id() + ":\n" +
-		get_packet_content() + "\n" +
-		"CRC: " + get_CRC_field() + "\n" +
-		"Concatenation Indicator: " + get_concatentaion_indicator_field() + "\n" +
-		"Destination Address: " + get_destination_address_field() + "\n" +
-		"Message Type: " + get_message_type_field() + "\n" +
-		"Payload Size: " + get_payload_size_field() + "\n" +
-		"Protocol Version: " + get_protocol_version_field() + "\n" +
-		"RTC ID: " + get_RTC_ID_field() + "\n" +
-		"Sequence ID: " + get_sequence_ID_field() + "\n" +
-		"Source Address: " + get_source_address_field() + "\n" +
-		"Type: " + get_type_field() + "\n";
+		   get_packet_content() + "\n" +
+		   "CRC: " + get_CRC_field() + "\n" +
+		   "Concatenation Indicator: " + get_concatentaion_indicator_field() + "\n" +
+		   "Destination Address: " + get_destination_address_field() + "\n" +
+		   "Message Type: " + get_message_type_field() + "\n" +
+		   "Payload Size: " + get_payload_size_field() + "\n" +
+		   "Protocol Version: " + get_protocol_version_field() + "\n" +
+		   "RTC ID: " + get_RTC_ID_field() + "\n" +
+		   "Sequence ID: " + get_sequence_ID_field() + "\n" +
+		   "Source Address: " + get_source_address_field() + "\n" +
+		   "Type: " + get_type_field() + "\n";
 }
-
-
-
