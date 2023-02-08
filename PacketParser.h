@@ -28,20 +28,15 @@ using namespace std;
 #define SEQUENCE_ID_START 12
 #define SEQUENCE_ID_LENGTH 4
 
-
-
-
 class PacketParser
 {
 public:
 	//calls parser for each line of file 
-	void call_parser(vector <string> packet_lines);
-	//parse individual lines into packets
+	string call_parser(int packet_line_number, string packet_line);
+	//parse individual lines into packet info
 	map<string, string> parse_packet_input (int packet_line_number, string input_packet);
 	map <string, string> parse_packet_data(string input_packet_data_field);
-	Packet create_packet(map<string, string> packet_info);
-
-private:
-
+	//create output string for each packet
+	string parse_output_packet(map<string, string> packet_info);
 };
 

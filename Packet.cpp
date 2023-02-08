@@ -1,5 +1,6 @@
 #include "Packet.h"
 #include "PacketParser.h"
+
 Packet::Packet()
 {
 }
@@ -14,7 +15,6 @@ Packet::Packet(map<string, string> packet_info)
 	this->data_field = packet_info.find("data_field")->second;
 	this->CRC_field = packet_info.find("CRC_field")->second;
 }
-
 
 string Packet::get_packet_id()
 {
@@ -50,6 +50,19 @@ string Packet::get_CRC_field()
 {
 	return this->CRC_field;
 }
+
+string Packet::get_packet_data()
+{	
+	return "Packet # " + get_packet_id() + ":\n" +
+		get_packet_content() + "\n" +
+		"CRC: " + get_CRC_field() + "\n" +
+		"Destination Address: " + get_destination_address_field() + "\n" +
+		"Source Address: " + get_source_address_field() + "\n" +
+		"Type: " + get_type_field() + "\n";
+
+}
+
+
 
 
 

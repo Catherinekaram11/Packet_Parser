@@ -1,17 +1,21 @@
 #include <fstream>
 #include <string>
+#include <iostream>
 #include <vector>
-using namespace std;
+#include <iomanip>     
 #pragma once	
+using namespace std;
 
 class File
 {
 public:
-	void read_file(string input_file_name);
+	File();
+	File(string input_file_name, string output_file_name);
 	vector<string> get_packet_lines();
-
-
+	void read_input_file();
+	void write_output_file();
 private:
+	string input_file_name, output_file_name;
 	vector<string> packet_lines;
 };
 

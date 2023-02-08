@@ -16,7 +16,7 @@ public:
 	string get_type_field();
 	string get_data_field();
 	string get_CRC_field();
-
+	virtual string get_packet_data();
 private:
 	//packet fields
 	string packet_id;
